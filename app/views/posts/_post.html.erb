@@ -1,9 +1,9 @@
 <li>
-  <% if logged_in? %>
-    <h2><%= current_user.name %></h2>
-  <% else %>
-    <h2>The Laughing Man</h2>
-  <% end %>
-  <h4><%= post.title %></h4>
+  
   <p><%= post.body %></p>
+  <% if logged_in? %>
+    <p><%= "By: #{current_user.name}" %></p>
+  <% else %>
+    <p>By: The Laughing Man</p>
+  <% end %>
 </li>

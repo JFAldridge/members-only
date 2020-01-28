@@ -3,9 +3,7 @@ class ApplicationController < ActionController::Base
   helper_method :current_user
 
   def log_in(user)
-    user.remember
-    cookies.permanent[:remember_token] = user.remember_token
-    @current_user = user
+    session[:user_id] = user.id
   end
 
   def logged_in?
@@ -13,15 +11,15 @@ class ApplicationController < ActionController::Base
   end
 
   def log_out
-    current_user.forget
-    cookies.delete(:remember_token)
+    session[:user_id] = nil
     @current_user = nil
   end
 
   def current_user
-    if (remember_token = cookies[:remember_token])
-      remember_digest = User.generate_digest(remember_token)
-      @current_user ||= User.find_by(remember_digest: remember_digest)
+    if (session[:user_id])
+      @current_user ||= User.find(session[:user_id])
+    else
+      @current_user = nil
     end
   end
 end
