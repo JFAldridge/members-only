@@ -1,13 +1,18 @@
 require 'test_helper'
 
 class PostsControllerTest < ActionDispatch::IntegrationTest
+  def setup
+    @user = users(:josh)
+  end
+
   test "should get index" do
-    get posts_index_url
+    get posts_url
     assert_response :success
   end
 
-  test "should get new" do
-    get posts_new_url
+  test "should get new if user is logged in" do
+    log_in_as(@user)
+    get new_post_url
     assert_response :success
   end
 
