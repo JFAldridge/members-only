@@ -1,9 +1,14 @@
 <li>
-  
-  <p><%= post.body %></p>
-  <% if logged_in? %>
-    <p><%= "By: #{current_user.name}" %></p>
-  <% else %>
-    <p>By: The Laughing Man</p>
-  <% end %>
+  <div>
+    <h5 class="post-title text-white bg-dark p-1 mb-0 mt-1 rounded-top"><%= post.title %></h5>
+    <div class="text-light bg-secondary p-1 rounded-bottom">
+    <p class="post-body"><%= post.body %></p>
+    <div class="post-author">
+      <% if logged_in? %>
+        <small><%= "By: #{current_user.name}" %></small>
+      <% else %>
+        <small>By: The Laughing Man</small>
+      <% end %>
+    </div>
+  </div>
 </li>
