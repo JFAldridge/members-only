@@ -13,4 +13,4 @@ This is the members_only project for the Odin Project's curriculum, personalized
 * Pagination
 
 ### Live site
-[Dead Poets Society]()
+[Dead Poets Society](https://polar-mountain-42157.herokuapp.com/)
