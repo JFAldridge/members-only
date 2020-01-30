@@ -10,14 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_28_172551) do
+ActiveRecord::Schema.define(version: 2020_01_30_133113) do
 
   create_table "posts", force: :cascade do |t|
-    t.text "title"
-    t.string "body"
+    t.string "title"
+    t.text "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
+    t.index ["updated_at"], name: "index_posts_on_updated_at"
   end
 
   create_table "users", force: :cascade do |t|
