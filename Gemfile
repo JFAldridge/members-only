@@ -19,6 +19,10 @@ gem 'uglifier', '>= 1.3.0'
 gem 'bootstrap', '~> 4.4.1'
 # Use jquery library
 gem 'jquery-rails'
+# Will_paginate provides a simple API for performing paginated queries with Active Record
+gem 'will_paginate', '~> 3.2', '>= 3.2.1'
+# Hooks into will_paginate to format the html to match Twitter Bootstrap styling.
+gem 'bootstrap-will_paginate', '~> 1.0'
 
 # Use CoffeeScript for .coffee assets and views
 gem 'coffee-rails', '~> 4.2'

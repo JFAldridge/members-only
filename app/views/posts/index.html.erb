@@ -6,6 +6,9 @@
   <div class="col-md-8 offset-md-2">
     <ul class="posts">
       <%= render @posts %>
-    </ul>
+    </ul>    
+  </div>
+  <div class="col-md-4 offset-md-4">
+  <%= will_paginate @posts, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer %>
   </div>
 </div>

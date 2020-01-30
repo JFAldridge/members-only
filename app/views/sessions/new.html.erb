@@ -2,9 +2,9 @@
   <div class="col-md-10 offset-md-1">
     <div class="row">
       <div class="col-md-6 offset-md-3">
-      <div class="text-center mt-4 mb-4">
-        <h1>Log in</h1>
-      </div>
+        <div class="text-center mt-4 mb-4">
+          <h1>Log in</h1>
+        </div>
         <%= form_for :session do |f|%>
           <div class="form-group row">
             <%= f.label :email, class: "col-sm-3 col-form-label" %>
@@ -27,8 +27,12 @@
                 <%= f.label :remember_me, class:"form-check-label" %>
               </div>
             </div>
-
         <% end %>
+        <div class="text-center text-muted">
+          <p>Sample this app by logging in as T. S. Eliot: <br>
+          email: ts@eliot.com <br>
+          password: foobar <p>
+        </div>
       </div>
     </div>
   </div>
